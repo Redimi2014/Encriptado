@@ -1,0 +1,134 @@
+/* Forma al cuerpo*/
+
+body {
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+/* Forma a los botones*/
+ /* button {
+    position: relative;
+    background-color: #e7e7e7;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background-color: #d7d7d7;
+    border-radius: inherit;
+  }
+  
+  button:hover {
+    top: -4px;
+  }
+  
+  button:hover:before {
+    top: -6px;
+  }
+  
+  button:active {
+    top: -2px;
+  }
+  
+  button:active:before {
+    top: -4px;
+  }
+*/
+
+
+  button {
+    background-color: #e7e7e7;
+    color: black;
+    border: 2px solid #e7e7e7;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  button:hover {
+    background-color: #d7d7d7;
+  }
+  /* Forma al texbox*/
+  input[type="text"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  /* Forma al panel de resultado*/
+  #result {
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+  }
+/* Centrar el contenedor */
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+
+  /* Centrar el para el radiobutton */
+
+  .options span {
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background-color: #333;
+    margin: 0 10px;
+  }
+
+  .options {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .options div {
+    margin: 0 10px;
+  }
+
+
+  .options input[type="radio"] {
+    display: none;
+  }
+  
+  .options label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e7e7e7;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    
+  }
+  
+  .options input[type="radio"]:checked + label {
+    background-color: #747373;
+    color: rgb(0, 0, 0);
+
+  }
+/*
+  .options input[type="radio"] {
+    margin: 0 10px;
+ 
+  }  */

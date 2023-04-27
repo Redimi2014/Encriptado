@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Encriptador/Desencriptador</title>
+  <link rel="stylesheet" href="estilo.css" /> <!-- Cargar el estilo CSS -->
+</head>
+
+<body>
+  <div class="container"> <!-- Contenedor -->
+    <h1>Encriptador/Desencriptador</h1>
+    <div class="options">
+      <div>
+        <input type="radio" id="encrypt" name="action" value="encrypt" checked />
+        <label for="encrypt">Encriptar</label>
+      </div>
+      <span></span>
+      <div>
+        <input type="radio" id="decrypt" name="action" value="decrypt" />
+        <label for="decrypt">Desencriptar</label>
+      </div>
+    </div>
+    <label for="inputText">Texto:</label><br />
+    <input type="text" id="inputText" /><br />
+    <button onclick="processText()">Procesar</button><br />
+    <p>Resultado:</p>
+    <p id="result"></p>
+    <button onclick="copyResult()">Copiar resultado</button>
+    <!-- script para realizar el encriptado y desencriptado-->
+    <script>
+      const encrypt = (word) => {
+        let encryptedWord = "";
+        for (let i = 0; i < word.length; i++) {
+          switch (word[i]) {
+            case "e":
+              encryptedWord += "enter";
+              break;
+            case "i":
+              encryptedWord += "imes";
+              break;
+            case "a":
+              encryptedWord += "ai";
+              break;
+            case "o":
+              encryptedWord += "ober";
+              break;
+            case "u":
+              encryptedWord += "ufat";
+              break;
+            default:
+              encryptedWord += word[i];
+          }
+        }
+        return encryptedWord;
+      };
+
+      const decrypt = (word) => {
+        let decryptedWord = "";
+        for (let i = 0; i < word.length; i++) {
+          if (word.substring(i, i + 5) === "enter") {
+            decryptedWord += "e";
+            i += 4;
+          } else if (word.substring(i, i + 4) === "imes") {
+            decryptedWord += "i";
+            i += 3;
+          } else if (word.substring(i, i + 2) === "ai") {
+            decryptedWord += "a";
+            i += 1;
+          } else if (word.substring(i, i + 4) === "ober") {
+            decryptedWord += "o";
+            i += 3;
+          } else if (word.substring(i, i + 4) === "ufat") {
+            decryptedWord += "u";
+            i += 3;
+          } else {
+            decryptedWord += word[i];
+          }
+        }
+        return decryptedWord;
+      };
+
+      const processText = () => {
+        const inputText = document.getElementById("inputText").value;
+        const action = document.querySelector('input[name="action"]:checked')
+          .value;
+        let result = "";
+        if (action === "encrypt") {
+          result = encrypt(inputText);
+        } else {
+          result = decrypt(inputText);
+        }
+        document.getElementById("result").textContent = result;
+      };
+
+      const copyResult = () => {
+        const resultText = document.getElementById("result").textContent;
+        navigator.clipboard.writeText(resultText);
+      };
+    </script>
+
+
+  </div>
+  <footer>
+
+    <p>
+      <center>Desarrollado por Reymond Perez</center>
+    </p>
+  </footer>
+
+</body>
+
+</html>
